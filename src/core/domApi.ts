@@ -22,5 +22,11 @@ export default {
   },
   nextSibling(elm: Node): Node | null {
     return elm.nextSibling
+  },
+  setTextContent(elm: Node, text: string | null) {
+    elm.textContent = text
+  },
+  removeChild(parent: Node, elm: Node) {
+    parent.removeChild(elm)
   }
 }
