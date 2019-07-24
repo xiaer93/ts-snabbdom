@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snabbdom/0.7.3/snabbdom.min.js"></script>
+  <!-- <script src="https://cdn.bootcss.com/snabbdom/0.7.3/h.min.js"></script> -->
+
+  <script>
+    const h = snabbdom.h
+
+    var vnode0 = document.createElement('div')
+    var created = 0;
+    var destroyed = 0;
+    var patch = snabbdom.init([{
+        create: function () {
+          created++;
+        }
+      },
+      {
+        destroy: function () {
+          destroyed++;
+        }
+      },
+    ]);
+    var vnode1 = h('div', [
+      h('span', 'First sibling'),
+      h('div', [
+        // h('span', 'Child 1'),
+        // h('span', ['Text 1', 'Text 2']),
+      ]),
+    ]);
+    var vnode2 = h('div');
+
+    patch(vnode0, vnode1);
+    patch(vnode1, vnode2);
+
+    console.log(created, destroyed)
+
+  </script>
+</body>
+
+</html>
