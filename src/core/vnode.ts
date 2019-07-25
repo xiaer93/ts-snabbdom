@@ -5,14 +5,18 @@ import { Key, VNodeData } from '../type'
 
 // 对内的vnode
 export default class VNode {
+  sel?: string
+  data?: VNodeData
+  children?: Array<VNode>
+  elm?: Node
+  text?: string
   key?: Key
-  constructor(
-    public sel?: string,
-    public data?: VNodeData,
-    public children?: Array<VNode>,
-    public elm?: Node,
-    public text?: string
-  ) {
+  constructor(sel?: string, data?: VNodeData, children?: Array<VNode>, elm?: Node, text?: string) {
+    this.sel = sel
+    this.data = data
+    this.children = children
+    this.elm = elm
+    this.text = text
     this.key = data === undefined ? undefined : data.key
   }
 }

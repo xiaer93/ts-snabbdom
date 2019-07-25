@@ -34,7 +34,7 @@ export function h(sel: any, b?: any, c?: any): VNode {
   if (children !== undefined) {
     for (let i = 0; i < children.length; ++i) {
       if (isPrimitive(children[i])) {
-        children[i] = new VNode(undefined, undefined, undefined, children[i], undefined)
+        children[i] = new VNode(undefined, undefined, undefined, undefined, children[i])
       }
     }
   }
