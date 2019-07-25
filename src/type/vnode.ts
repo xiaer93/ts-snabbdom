@@ -12,6 +12,6 @@ export interface VNode {
 }
 
 export interface VNodeData {
-  style: VNodeStyle
+  style?: VNodeStyle
   [key: string]: any
 }

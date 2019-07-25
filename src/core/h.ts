@@ -12,7 +12,7 @@ export function h(sel: string, data: VNodeData): VNode
 export function h(sel: string, children: VNodeChildren): VNode
 export function h(sel: string, data: VNodeData, children: VNodeChildren): VNode
 export function h(sel: any, b?: any, c?: any): VNode {
-  let data: VNodeData = {},
+  let data: VNodeData = {} as VNodeData,
     children: any,
     text: any
 

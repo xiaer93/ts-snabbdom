@@ -1,4 +1,4 @@
-import { VNode } from '../type'
+import VNode from '../core/vnode'
 
 export function isVNode(v: any): v is VNode {
   return v.sel !== undefined
