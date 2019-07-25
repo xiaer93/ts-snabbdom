@@ -325,7 +325,6 @@ function removeVnodes(parent: Node, vnodes: Array<VNode>, startIndex: number, en
         listeners = cbs.remove.length + 1
         rm = createRmCb(ch.elm!, listeners)
         invokeDestroyHook(ch)
-
         // hook-remove
         for (i = 0; i < cbs.remove.length; ++i) {
           cbs.remove[i](ch, rm)

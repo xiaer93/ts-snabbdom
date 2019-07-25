@@ -1,0 +1,23 @@
+@startuml
+
+start
+
+:patch(oldVnode, vnode);
+if (sameVnode(oldVnode, vnode))
+  :patchNode(oldVnode, vnode);
+  note right
+     vnode节点有2中类型，text和children；
+     patchNode依据节点类型比较，修改textContent或子node
+  end note
+  :updateChildren(parentElm, oldCh, newCh);
+  note right
+    updateChildren比较sameVnode的子节点；
+    添加、删除、移动、或者patchNode，对真实dom进行操作。
+  end note
+else
+  :createElm;
+endif
+
+stop
+
+@enduml
